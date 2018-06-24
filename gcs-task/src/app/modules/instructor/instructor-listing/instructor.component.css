@@ -1,0 +1,12 @@
+.container{
+    margin-top: 3%;
+}
+.fa-plus-square{
+    font-size: 200%;
+    float: right;
+    background-color:white;
+    color: #607D8B;
+}
+.fa-trash, .fa-info-circle{
+    margin-left: 20%;
+}

@@ -1,0 +1,11 @@
+<div class="container">
+  <h4>Students that are Enrolled in {{course.Name}}</h4>
+  <ol>
+    <li *ngFor="let student of course.StudentsName">{{student}}</li>
+  </ol>
+  <hr>
+  <h4>Instructors that teach {{course.Name}}</h4>
+  <ol>
+    <li *ngFor="let instructor of course.InstructorsName">{{instructor}}</li>
+  </ol>
+</div>

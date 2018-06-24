@@ -1,0 +1,32 @@
+<div class="container">
+  <h4>Add Course</h4>
+  <form #f="ngForm" (ngSubmit)="onSubmit(f)" ngNativeValidate>
+    <div class="form-group">
+      <label for="name">Course Name</label>
+      <input type="text" name="name" class="form-control" [(ngModel)]="name" id="name">
+    </div>
+    <div class="form-group">
+      <label for="code">Code</label>
+      <input type="text" class="form-control" name="code" [(ngModel)]="code" id="code">
+    </div>
+    <div class="form-group">
+      <label for="noOfHours">No Of Hours</label>
+      <input type="noOfHours" class="form-control" name="noOfHours" [(ngModel)]="noOfHours" id="noOfHours">
+    </div>
+    <div class="row">
+      <div class="form-group col-md-6">
+        <p>Instructors</p>
+        <select id="instructors" name="InstructorsId" [(ngModel)]="InstructorsId" multiple>
+          <option *ngFor="let instructor of instructors" value="{{instructor.Id}}">{{instructor.Name}}</option>
+        </select>
+      </div>
+      <div class="form-group col-md-6">
+        <p>Students</p>
+        <select id="students" name="StudentsId" [(ngModel)]="StudentsId" multiple>
+          <option *ngFor="let student of students" value="{{student.Id}}">{{student.Name}}</option>
+        </select>
+      </div>
+    </div>
+    <button type="submit" class="btn submit-btn">Submit</button>
+  </form>
+</div>

@@ -1,0 +1,39 @@
+<div class="container">
+  <div class="row">
+    <h4 class="col-md-8">All Courses</h4>
+
+    <a class="col-md-4" routerLink="/courses/add">
+      <i class="fa fa-plus-square"></i>
+    </a>
+  </div>
+  <table class="table">
+    <thead class="thead-dark">
+      <tr>
+        <th scope="col">#</th>
+        <th scope="col">Course Name</th>
+        <th scope="col">Code</th>
+        <th scope="col">No Of Hours</th>
+        <th scope="col">Actions</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let course of courses">
+        <th scope="row">{{course.Id}}</th>
+        <td>{{course.Name}}</td>
+        <td>{{course.Code}}</td>
+        <td>{{course.NoOfHours}}</td>
+        <td>
+          <a>
+            <i [routerLink]="['../courses/edit', course.Id]" class="fa fa-edit"></i>
+          </a>
+          <a (click)="deleteCourse(course.Id)">
+            <i class="fa fa-trash"></i>
+          </a>
+          <a>
+            <i [routerLink]="['../courses/details', course.Id]" class="fa fa-info-circle"></i>
+          </a>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
